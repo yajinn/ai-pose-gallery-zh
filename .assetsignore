@@ -1,5 +1,5 @@
-# 若把 Build output directory 设为仓库根目录 /，Cloudflare 会把以下内容一并扫描上传，
-# 本文件用于排除它们（尤其是 .git：内含数亿字节的 pack 文件，会触发 25 MiB 单文件限制）。
+# If the Build output directory is set to the repo root (/), Cloudflare scans and uploads everything below.
+# This file excludes them (especially .git, whose pack files are hundreds of MB and hit the 25 MiB per-file limit).
 .git
 .github
 .gitignore

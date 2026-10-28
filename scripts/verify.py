@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""校验：文件是否存在、大小是否正常、图片头是否合法。
+"""Verify that every file exists, has a sane size and a valid image header.
 
-用法（在仓库根目录）: python3 scripts/verify.py
+Usage (from the repo root): python3 scripts/verify.py
 """
 import json
 import os
@@ -38,15 +38,15 @@ for item in data:
         else:
             size_img += sz
 
-print(f"期望文件数 {total}，异常 {len(bad)}")
-print(f"thumbs 合计 {size_thumbs/1048576:.1f} MB，img 合计 {size_img/1048576:.1f} MB，"
-      f"总计 {(size_thumbs+size_img)/1048576:.1f} MB")
+print(f"Expected files: {total}, problems: {len(bad)}")
+print(f"thumbs total {size_thumbs/1048576:.1f} MB, img total {size_img/1048576:.1f} MB, "
+      f"overall {(size_thumbs+size_img)/1048576:.1f} MB")
 if bad:
     for p, why in bad[:40]:
         print(" ", p, why)
     with open(os.path.join(ROOT, "verify_failed.txt"), "w", encoding="utf-8") as f:
         for p, why in bad:
             f.write(f"{p}\t{why}\n")
-    print("完整清单 -> verify_failed.txt")
+    print("Full list -> verify_failed.txt")
     sys.exit(1)
-print("全部通过 ✅")
+print("All checks passed ✅")
