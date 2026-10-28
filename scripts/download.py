@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""并发下载 POSE 站点的 thumbs + img 全部图片（断点续传、失败重试）。
+"""Concurrently download every thumb + full-size image from the POSE site (resumable, with retries).
 
-用法（在仓库根目录）:
+Usage (from the repo root):
     python3 scripts/download.py
     WORKERS=64 python3 scripts/download.py
 """

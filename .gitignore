@@ -10,17 +10,17 @@ __pycache__/
 .venv/
 venv/
 
-# 工具产物
+# Tool output
 *.part
 download_failed.txt
 verify_failed.txt
 
-# 本地/编辑器
+# Local / editor
 .workbuddy/
 .idea/
 .vscode/
 node_modules/
 .wrangler/
 
-# 构建产物
+# Build output
 dist/
